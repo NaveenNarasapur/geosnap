@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
+@layer components {
+  .btn { @apply whitespace-nowrap inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition active:scale-[.97] disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-accent text-ink-950 hover:brightness-110; }
+  .btn-ghost { @apply btn bg-white/10 text-white hover:bg-white/15 backdrop-blur; }
+  .icon-btn { @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition hover:bg-black/60 active:scale-95 disabled:opacity-40; }
+  .card { @apply rounded-2xl border border-white/10 bg-ink-900/90; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium; }
+  .label { @apply text-[11px] font-medium uppercase tracking-wider text-white/45; }
+  .seg { @apply rounded-xl px-3 py-2 text-xs font-medium transition border border-white/10; }
+  .seg-on { @apply bg-white text-ink-950 border-white; }
+  .seg-off { @apply bg-white/5 text-white/80 hover:bg-white/10; }
+}
+.safe-top { padding-top: max(env(safe-area-inset-top), 0.75rem); }
+.safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 1rem); }
